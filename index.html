@@ -15,7 +15,7 @@
 
     header {
       background-color: #333;
-      padding: 10px;
+      padding: 20px;
       text-align: center;
     }
 
@@ -27,15 +27,17 @@
     }
 
     section {
-      padding: 20px;
+      padding: 40px;
       margin: 20px;
-      border: 1px solid #fff;
+      border: 2px solid #fff;
       border-radius: 10px;
+      background-color: #222;
+      color: #fff;
     }
 
     footer {
       text-align: center;
-      padding: 10px;
+      padding: 20px;
       background-color: #333;
     }
   </style>
@@ -44,7 +46,7 @@
 
   <header>
     <h1>Athylla</h1>
-    <p>Seu slogan ou breve descrição aqui</p>
+    <p>Desenvolvedor Web | Apaixonado por Tecnologia</p>
   </header>
 
   <nav>
@@ -55,4 +57,41 @@
   </nav>
 
   <section id="sobre">
-    <h
+    <h2>Sobre Mim</h2>
+    <p>Breve descrição sobre quem eu sou e o que eu faço.</p>
+  </section>
+
+  <section id="educacao">
+    <h2>Educação</h2>
+    <p>Informações sobre minha formação acadêmica.</p>
+  </section>
+
+  <section id="projetos">
+    <h2>Projetos</h2>
+    <p>Destaque alguns dos projetos incríveis em que trabalhei.</p>
+  </section>
+
+  <section id="contato">
+    <h2>Contato</h2>
+    <p>Entre em contato comigo através do e-mail ou redes sociais.</p>
+  </section>
+
+  <footer>
+    <p>&copy; 2023 Athylla - Todos os direitos reservados.</p>
+  </footer>
+
+  <script>
+    // Adiciona animação suave para rolar para as seções
+    $('nav a').on('click', function (e) {
+      e.preventDefault();
+
+      var targetSection = $($(this).attr('href'));
+
+      $('html, body').animate({
+        scrollTop: targetSection.offset().top
+      }, 1000);
+    });
+  </script>
+
+</body>
+</html>
