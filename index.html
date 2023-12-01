@@ -10,26 +10,35 @@
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       margin: 0;
       padding: 0;
-      background-color: #111;
+      background: linear-gradient(to right, #2b2b2b, #1e1e1e); /* Gradiente de cores escuras */
       color: #fff;
-      animation: fadeIn 3s ease-in-out; /* Duração da animação aumentada para 3 segundos */
+      animation: fadeIn 3s ease-in-out;
     }
 
     header {
-      background-color: #333;
+      background: #333;
       padding: 20px;
       text-align: center;
     }
 
     header p {
-      animation: fadeInUp 2s ease-in-out; /* Adiciona animação às fontes */
+      animation: fadeInUp 2s ease-in-out;
     }
 
     nav {
       display: flex;
       justify-content: space-around;
-      background-color: #444;
+      background: #444;
       padding: 10px;
+    }
+
+    nav a {
+      color: #fff;
+      transition: color 0.5s ease; /* Transição suave da cor do texto */
+    }
+
+    nav a:hover {
+      color: #ffcc00; /* Cor amarela quando o mouse passa sobre o link */
     }
 
     section {
@@ -37,14 +46,14 @@
       margin: 20px;
       border: 2px solid #fff;
       border-radius: 10px;
-      background-color: #222;
+      background: #2b2b2b;
       color: #fff;
     }
 
     footer {
       text-align: center;
       padding: 20px;
-      background-color: #333;
+      background: #333;
     }
 
     @keyframes fadeIn {
@@ -117,6 +126,16 @@
       $('html, body').animate({
         scrollTop: targetSection.offset().top
       }, 1000);
+    });
+
+    // Altera a cor do texto do menu ao rolar
+    $(window).scroll(function () {
+      var scroll = $(window).scrollTop();
+      if (scroll > 50) {
+        $('nav a').css('color', '#000'); // Cor do texto quando rolar para baixo
+      } else {
+        $('nav a').css('color', '#fff'); // Cor do texto quando no topo
+      }
     });
   </script>
 
