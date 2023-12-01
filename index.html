@@ -3,23 +3,24 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Athylla Rodrigues - Meu Site</title>
+  <title>Athylla - Meu Blog</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
   <style>
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       margin: 0;
       padding: 0;
-      background: linear-gradient(to right, #2b2b2b, #1e1e1e);
-      color: #fff;
-      animation: fadeIn 3s ease-in-out;
+      background: linear-gradient(to right, #f0ebeb, #d2d8d7); /* Gradiente de tons pastéis */
+      color: #333;
+      animation: fadeIn 5s ease-in-out;
     }
 
     header {
-      background: #333;
+      background: #f6d6ad; /* Cor pastel */
       padding: 20px;
       text-align: center;
-      animation: fadeInDown 2s ease-in-out; /* Adiciona animação de entrada */
+      animation: fadeInDown 3s ease-in-out;
+      border-radius: 15px; /* Bordas arredondadas */
     }
 
     header h1 {
@@ -27,49 +28,68 @@
     }
 
     header p {
-      animation: fadeInUp 2s ease-in-out;
+      animation: fadeInUp 3s ease-in-out;
     }
 
     nav {
       display: flex;
       justify-content: space-around;
-      background: #444;
+      background: #ffebcd; /* Cor pastel */
       padding: 10px;
+      border-radius: 15px;
+      margin-top: 10px;
     }
 
     nav a {
-      color: #fff;
+      color: #333;
       transition: color 0.5s ease;
     }
 
     nav a:hover {
-      color: #ffcc00;
+      color: #ff6347; /* Cor pastel */
     }
 
     section {
       padding: 40px;
       margin: 20px;
       border: 2px solid #fff;
-      border-radius: 10px;
-      background: #2b2b2b;
-      color: #fff;
-      animation: fadeInLeft 2s ease-in-out; /* Adiciona animação de entrada */
+      border-radius: 15px;
+      background: #f6d6ad; /* Cor pastel */
+      color: #333;
+      animation: fadeInLeft 3s ease-in-out;
+      overflow: hidden; /* Evita que as formas geométricas ultrapassem os limites da seção */
+      position: relative;
+    }
+
+    section::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url('sua-imagem-1.jpg') no-repeat center center fixed;
+      background-size: cover;
+      opacity: 0.3; /* Ajuste a opacidade conforme necessário */
+      z-index: -1;
     }
 
     section h2 {
-      font-size: 1.5em;
+      font-size: 1.8em;
       margin-bottom: 10px;
     }
 
     section p {
-      font-size: 1.1em;
+      font-size: 1.2em;
     }
 
     footer {
       text-align: center;
       padding: 20px;
-      background: #333;
-      animation: fadeInUp 2s ease-in-out;
+      background: #ffebcd; /* Cor pastel */
+      animation: fadeInUp 3s ease-in-out;
+      border-radius: 15px;
+      margin-top: 20px;
     }
 
     @keyframes fadeIn {
@@ -155,22 +175,18 @@
 
   <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
   <script>
-    // Adiciona animação suave para rolar para as seções
     $('nav a').on('click', function (e) {
       e.preventDefault();
-
       var targetSection = $($(this).attr('href'));
-
       $('html, body').animate({
         scrollTop: targetSection.offset().top
       }, 1000);
     });
 
-    // Altera a cor do texto do menu ao rolar
     $(window).scroll(function () {
       var scroll = $(window).scrollTop();
       if (scroll > 50) {
-        $('nav a').css('color', '#000');
+        $('nav a').css('color', '#333');
       } else {
         $('nav a').css('color', '#fff');
       }
@@ -178,4 +194,3 @@
   </script>
 
 </body>
-</html>
