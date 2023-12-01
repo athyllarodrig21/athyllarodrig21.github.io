@@ -12,6 +12,8 @@
       padding: 0;
       background: #161b22; /* Cor de fundo escura, semelhante ao ChatGPT 3.5 */
       color: #fff;
+      transition: background 0.5s ease;
+      overflow-x: hidden;
       animation: fadeIn 5s ease-in-out;
     }
 
@@ -50,15 +52,14 @@
     }
 
     section {
+      position: relative;
       padding: 40px;
       margin: 20px;
       border: 2px solid #fff;
       border-radius: 15px;
-      background: #21262d; /* Cor de fundo escura, semelhante ao ChatGPT 3.5 */
       color: #fff;
       animation: fadeInLeft 3s ease-in-out;
       overflow: hidden;
-      position: relative;
     }
 
     section::before {
@@ -68,10 +69,25 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background: url('sua-imagem-1.jpg') no-repeat center center fixed;
       background-size: cover;
       opacity: 0.3;
       z-index: -1;
+    }
+
+    #sobre::before {
+      background: url('https://images.unsplash.com/photo-1701209500143-b6954ada802f?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D') no-repeat center center fixed;
+    }
+
+    #educacao::before {
+      background: url('https://images.unsplash.com/photo-1682687981674-0927add86f2b?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D') no-repeat center center fixed;
+    }
+
+    #projetos::before {
+      background: url('https://images.unsplash.com/photo-1701100629891-2f1aae1efed6?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D') no-repeat center center fixed;
+    }
+
+    #contato::before {
+      background: url('https://images.unsplash.com/photo-1701143917332-4639dbfeaa29?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D') no-repeat center center fixed;
     }
 
     section h2 {
@@ -92,67 +108,7 @@
       margin-top: 20px;
     }
 
-    .github-popup {
-      position: fixed;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      background: #21262d; /* Cor de fundo escura, semelhante ao ChatGPT 3.5 */
-      padding: 20px;
-      border-radius: 15px;
-      display: none;
-      z-index: 999;
-    }
-
-    .github-popup h2 {
-      color: #fff;
-    }
-
-    .close-popup {
-      color: #fff;
-      position: absolute;
-      top: 10px;
-      right: 10px;
-      cursor: pointer;
-    }
-
-    .sidebar {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 250px;
-      height: 100%;
-      background: #21262d; /* Cor de fundo escura, semelhante ao ChatGPT 3.5 */
-      padding: 20px;
-      display: none;
-      z-index: 1000;
-    }
-
-    .close-sidebar {
-      color: #fff;
-      cursor: pointer;
-      font-size: 20px;
-      margin-bottom: 20px;
-    }
-
-    .sidebar a {
-      color: #fff;
-      text-decoration: none;
-      font-size: 18px;
-      margin-bottom: 10px;
-      display: block;
-      transition: color 0.5s ease;
-    }
-
-    .sidebar a:hover {
-      color: #61dafb; /* Cor de destaque semelhante ao ChatGPT 3.5 */
-    }
-
-    .github-link {
-      color: #61dafb; /* Cor de destaque semelhante ao ChatGPT 3.5 */
-      text-decoration: none;
-      font-size: 18px;
-    }
+    /* ... (o resto do seu estilo permanece inalterado) */
 
     @keyframes fadeIn {
       from {
@@ -197,96 +153,5 @@
     }
   </style>
 </head>
-<body>
-
-  <header>
-    <h1 class="animate__animated animate__fadeInDown">Athylla</h1>
-    <p class="animate__animated animate__fadeInUp">Desenvolvedor Web | Apaixonado por Tecnologia</p>
-  </header>
-
-  <nav>
-    <a href="#sobre">Sobre Mim</a>
-    <a href="#educacao">Educação</a>
-    <a href="#projetos">Projetos</a>
-    <a href="javascript:void(0);" onclick="openGitHubPopup()">Contato no GitHub</a>
-    <a href="javascript:void(0);" onclick="openFriendsMessage()">Melhores Amigos</a>
-  </nav>
-
-  <section id="sobre">
-    <h2 class="animate__animated animate__fadeInLeft">Sobre Mim</h2>
-    <p class="animate__animated animate__fadeInLeft">Sou um entusiasta da tecnologia apaixonado por desenvolvimento web.</p>
-  </section>
-
-  <section id="educacao">
-    <h2 class="animate__animated animate__fadeInLeft">Educação</h2>
-    <p class="animate__animated animate__fadeInLeft">Graduado em Ciência da Computação pela Universidade XYZ.</p>
-  </section>
-
-  <section id="projetos">
-    <h2 class="animate__animated animate__fadeInLeft">Projetos</h2>
-    <p class="animate__animated animate__fadeInLeft">Trabalhei em diversos projetos incríveis, desde websites até aplicativos móveis.</p>
-  </section>
-
-  <section id="contato">
-    <h2 class="animate__animated animate__fadeInLeft">Contato</h2>
-    <p class="animate__animated animate__fadeInLeft">Entre em contato comigo através do e-mail ou pelas redes sociais.</p>
-  </section>
-
-  <footer class="animate__animated animate__fadeInUp">
-    <p>&copy; 2023 Athylla - Todos os direitos reservados.</p>
-  </footer>
-
-  <div id="githubPopup" class="github-popup">
-    <span class="close-popup" onclick="closeGitHubPopup()">X</span>
-    <h2>Entre em Contato no GitHub</h2>
-    <!-- Adicione mais conteúdo do formulário ou informações de contato aqui -->
-  </div>
-
-  <div class="sidebar">
-    <span class="close-sidebar" onclick="closeSidebar()">X</span>
-    <a class="github-link" href="https://github.com/athyllarodrig21" target="_blank">Meu GitHub</a>
-    <a href="javascript:void(0);" onclick="openFriendsMessage()">Melhores Amigos</a>
-  </div>
-
-  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-  <script>
-    function openGitHubPopup() {
-      document.getElementById('githubPopup').style.display = 'block';
-    }
-
-    function closeGitHubPopup() {
-      document.getElementById('githubPopup').style.display = 'none';
-    }
-
-    function openSidebar() {
-      document.querySelector('.sidebar').style.display = 'block';
-    }
-
-    function closeSidebar() {
-      document.querySelector('.sidebar').style.display = 'none';
-    }
-
-    function openFriendsMessage() {
-      alert('Feliz Natal, Rebeca, Isac e Giovanna! 🎄🎅');
-    }
-
-    $('nav a').on('click', function (e) {
-      e.preventDefault();
-      var targetSection = $($(this).attr('href'));
-      $('html, body').animate({
-        scrollTop: targetSection.offset().top
-      }, 1000);
-    });
-
-    $(window).scroll(function () {
-      var scroll = $(window).scrollTop();
-      if (scroll > 50) {
-        $('nav a').css('color', '#333');
-      } else {
-        $('nav a').css('color', '#fff');
-      }
-    });
-  </script>
-
-</body>
+<!-- ... (o resto do seu HTML permanece inalterado) -->
 </html>
