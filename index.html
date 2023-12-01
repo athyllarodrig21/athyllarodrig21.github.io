@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Athylla - Meu Site</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
   <style>
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -11,6 +12,7 @@
       padding: 0;
       background-color: #111;
       color: #fff;
+      animation: fadeIn 1.5s ease-in-out; /* Adiciona animação de entrada */
     }
 
     header {
@@ -40,13 +42,22 @@
       padding: 20px;
       background-color: #333;
     }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
   </style>
 </head>
 <body>
 
   <header>
     <h1>Athylla</h1>
-    <p>Desenvolvedor Web | Apaixonado por Tecnologia</p>
+    <p class="animate__animated animate__fadeIn">Desenvolvedor Web | Apaixonado por Tecnologia</p>
   </header>
 
   <nav>
@@ -58,28 +69,29 @@
 
   <section id="sobre">
     <h2>Sobre Mim</h2>
-    <p>Breve descrição sobre quem eu sou e o que eu faço.</p>
+    <p>Adicione uma breve descrição sobre quem você é e o que faz.</p>
   </section>
 
   <section id="educacao">
     <h2>Educação</h2>
-    <p>Informações sobre minha formação acadêmica.</p>
+    <p>Inclua informações sobre sua formação acadêmica.</p>
   </section>
 
   <section id="projetos">
     <h2>Projetos</h2>
-    <p>Destaque alguns dos projetos incríveis em que trabalhei.</p>
+    <p>Destaque alguns dos projetos em que você trabalhou.</p>
   </section>
 
   <section id="contato">
     <h2>Contato</h2>
-    <p>Entre em contato comigo através do e-mail ou redes sociais.</p>
+    <p>Forneça informações de contato ou um formulário.</p>
   </section>
 
   <footer>
     <p>&copy; 2023 Athylla - Todos os direitos reservados.</p>
   </footer>
 
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
   <script>
     // Adiciona animação suave para rolar para as seções
     $('nav a').on('click', function (e) {
