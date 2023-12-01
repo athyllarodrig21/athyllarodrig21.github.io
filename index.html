@@ -16,6 +16,8 @@
       overflow-x: hidden;
       animation: fadeIn 5s ease-in-out;
       display: flex;
+      flex-direction: column;
+      height: 100vh;
     }
 
     header {
@@ -24,7 +26,6 @@
       padding: 20px;
       text-align: center;
       animation: fadeInDown 3s ease-in-out;
-      border-radius: 0 15px 15px 0;
     }
 
     header h1 {
@@ -36,10 +37,15 @@
     }
 
     nav {
-      width: 200px;
+      width: 100%;
       background: #555; /* Cinza mais claro */
       padding: 10px;
-      border-radius: 0 15px 15px 0;
+      border-radius: 0 0 15px 15px;
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 1;
+      display: none;
     }
 
     nav a {
@@ -59,6 +65,7 @@
     main {
       flex: 1;
       padding: 20px;
+      transition: margin-left 0.5s;
     }
 
     section {
@@ -162,18 +169,20 @@
 </head>
 <body>
 
-  <header>
-    <h1 class="animate__animated animate__fadeInDown">Athylla</h1>
-    <p class="animate__animated animate__fadeInUp">Desenvolvedor Web | Apaixonado por Tecnologia</p>
-  </header>
-
-  <nav>
+  <nav id="sidebar">
+    <a href="javascript:void(0);" class="close-sidebar" onclick="closeSidebar()">X</a>
     <a href="#sobre">Sobre Mim</a>
     <a href="#educacao">Educação</a>
     <a href="#projetos">Projetos</a>
     <a href="javascript:void(0);" onclick="openGitHubPopup()">Contato no GitHub</a>
     <a href="javascript:void(0);" onclick="openFriendsMessage()">Melhores Amigos</a>
   </nav>
+
+  <header>
+    <h1 class="animate__animated animate__fadeInDown">Athylla</h1>
+    <p class="animate__animated animate__fadeInUp">Desenvolvedor Web | Apaixonado por Tecnologia</p>
+    <a href="javascript:void(0);" class="open-sidebar" onclick="openSidebar()">☰ Menu</a>
+  </header>
 
   <main>
     <section id="sobre">
@@ -215,9 +224,24 @@
 
   <!-- Player de áudio para a música natalina -->
   <audio id="background-music" loop volume="0.5">
-    <source src="https://drive.google.com/uc?export=view&id=1S8dhmPGQIHyLSxExAfPXTnX93vZQH1_E" type="audio/mp3">
+    <source src="https://github.com/athyllarodrigues/athyllarodrigues.github.io/blob/main/Jingle%20Bells%20_%20Partitura%20com%20Notas%20Flauta%20Doce%2C%20Violino%20e%20Playback%20no%20Piano%20_%20Bate%20o%20Sino%20Pequenino_zHrCrA1kACc.mp3" type="audio/mp3">
     Seu navegador não suporta o elemento de áudio.
   </audio>
+
+  <script>
+    function openSidebar() {
+      document.getElementById('sidebar').style.width = '250px';
+      document.getElementById('main').style.marginLeft = '250px';
+      document.body.style.backgroundColor = 'rgba(0,0,0,0.4)';
+      document.getElementById('sidebar').style.display = 'block';
+    }
+
+    function closeSidebar() {
+      document.getElementById('sidebar').style.width = '0';
+      document.getElementById('main').style.marginLeft = '0';
+      document.body.style.backgroundColor = 'white';
+    }
+  </script>
 
   <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
   <script>
