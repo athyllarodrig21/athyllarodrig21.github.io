@@ -3,14 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Athylla - Meu Blog</title>
+  <title>Athylla - Meu Blog Natalino</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
   <style>
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       margin: 0;
       padding: 0;
-      background: #161b22; /* Cor de fundo escura, semelhante ao ChatGPT 3.5 */
+      background: #e74c3c; /* Vermelho festivo */
       color: #fff;
       transition: background 0.5s ease;
       overflow-x: hidden;
@@ -18,7 +18,7 @@
     }
 
     header {
-      background: #21262d; /* Cor de fundo escura, semelhante ao ChatGPT 3.5 */
+      background: #d35400; /* Laranja festivo */
       padding: 20px;
       text-align: center;
       animation: fadeInDown 3s ease-in-out;
@@ -36,7 +36,7 @@
     nav {
       display: flex;
       justify-content: space-around;
-      background: #282c34; /* Cor de fundo escura, semelhante ao ChatGPT 3.5 */
+      background: #e67e22; /* Laranja mais claro */
       padding: 10px;
       border-radius: 15px;
       margin-top: 10px;
@@ -48,7 +48,7 @@
     }
 
     nav a:hover {
-      color: #61dafb; /* Cor de destaque semelhante ao ChatGPT 3.5 */
+      color: #fff;
     }
 
     section {
@@ -75,19 +75,19 @@
     }
 
     #sobre::before {
-      background: url('https://images.unsplash.com/photo-1701209500143-b6954ada802f?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D') no-repeat center center fixed;
+      background: url('https://images.unsplash.com/25/snow-light.JPG?q=80&w=1476&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D') no-repeat center center fixed;
     }
 
     #educacao::before {
-      background: url('https://images.unsplash.com/photo-1682687981674-0927add86f2b?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D') no-repeat center center fixed;
+      background: url('https://images.unsplash.com/photo-1575108921207-e6fca0c7dcf5?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D') no-repeat center center fixed;
     }
 
     #projetos::before {
-      background: url('https://images.unsplash.com/photo-1701100629891-2f1aae1efed6?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D') no-repeat center center fixed;
+      background: url('https://images.unsplash.com/photo-1474658303661-7a65351507ad?q=80&w=1469&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D') no-repeat center center fixed;
     }
 
     #contato::before {
-      background: url('https://images.unsplash.com/photo-1701143917332-4639dbfeaa29?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D') no-repeat center center fixed;
+      background: url('https://images.unsplash.com/photo-1512225791657-89428d1df969?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D') no-repeat center center fixed;
     }
 
     section h2 {
@@ -102,13 +102,11 @@
     footer {
       text-align: center;
       padding: 20px;
-      background: #282c34; /* Cor de fundo escura, semelhante ao ChatGPT 3.5 */
+      background: #d35400; /* Laranja festivo */
       animation: fadeInUp 3s ease-in-out;
       border-radius: 15px;
       margin-top: 20px;
     }
-
-    /* ... (o resto do seu estilo permanece inalterado) */
 
     @keyframes fadeIn {
       from {
@@ -168,6 +166,12 @@
     <a href="javascript:void(0);" onclick="openFriendsMessage()">Melhores Amigos</a>
   </nav>
 
+  <!-- Player de áudio para a música natalina -->
+  <audio id="background-music" loop volume="0.5">
+    <source src="https://drive.google.com/uc?export=view&id=1S8dhmPGQIHyLSxExAfPXTnX93vZQH1_E" type="audio/mp3">
+    Seu navegador não suporta o elemento de áudio.
+  </audio>
+
   <section id="sobre">
     <h2 class="animate__animated animate__fadeInLeft">Sobre Mim</h2>
     <p class="animate__animated animate__fadeInLeft">Sou um entusiasta da tecnologia apaixonado por desenvolvimento web.</p>
@@ -189,7 +193,7 @@
   </section>
 
   <footer class="animate__animated animate__fadeInUp">
-    <p>&copy; 2023 Athylla - Todos os direitos reservados.</p>
+    <p>&copy; 2023 Athylla - Todos os direitos reservados. 🎄⛄</p>
   </footer>
 
   <div id="githubPopup" class="github-popup">
@@ -206,45 +210,12 @@
 
   <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
   <script>
-    function openGitHubPopup() {
-      document.getElementById('githubPopup').style.display = 'block';
-    }
+    // Adicione aqui seus scripts JavaScript existentes
 
-    function closeGitHubPopup() {
-      document.getElementById('githubPopup').style.display = 'none';
-    }
-
-    function openSidebar() {
-      document.querySelector('.sidebar').style.display = 'block';
-    }
-
-    function closeSidebar() {
-      document.querySelector('.sidebar').style.display = 'none';
-    }
-
-    function openFriendsMessage() {
-      alert('Feliz Natal, Rebeca, Isac e Giovanna! 🎄🎅');
-    }
-
-    $('nav a').on('click', function (e) {
-      e.preventDefault();
-      var targetSection = $($(this).attr('href'));
-      $('html, body').animate({
-        scrollTop: targetSection.offset().top
-      }, 1000);
-    });
-
-    $(window).scroll(function () {
-      var scroll = $(window).scrollTop();
-      if (scroll > 50) {
-        $('nav a').css('color', '#333');
-      } else {
-        $('nav a').css('color', '#fff');
-      }
-
-      // Mudança de cor de fundo ao rolar
-      var newBackgroundColor = scroll > 50 ? '#1c1f25' : '#161b22';
-      $('body').css('background', newBackgroundColor);
+    // Iniciar a reprodução da música natalina ao carregar a página
+    document.addEventListener('DOMContentLoaded', function() {
+      var music = document.getElementById('background-music');
+      music.play();
     });
   </script>
 
