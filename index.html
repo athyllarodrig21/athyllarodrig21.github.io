@@ -10,13 +10,13 @@
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       margin: 0;
       padding: 0;
-      background: #1e1e1e; /* Cor de fundo escura */
+      background: #161b22; /* Cor de fundo escura, semelhante ao ChatGPT 3.5 */
       color: #fff;
       animation: fadeIn 5s ease-in-out;
     }
 
     header {
-      background: #282c34; /* Cor de fundo escura */
+      background: #21262d; /* Cor de fundo escura, semelhante ao ChatGPT 3.5 */
       padding: 20px;
       text-align: center;
       animation: fadeInDown 3s ease-in-out;
@@ -34,7 +34,7 @@
     nav {
       display: flex;
       justify-content: space-around;
-      background: #2c313a; /* Cor de fundo escura */
+      background: #282c34; /* Cor de fundo escura, semelhante ao ChatGPT 3.5 */
       padding: 10px;
       border-radius: 15px;
       margin-top: 10px;
@@ -46,7 +46,7 @@
     }
 
     nav a:hover {
-      color: #ff6347; /* Cor pastel */
+      color: #61dafb; /* Cor de destaque semelhante ao ChatGPT 3.5 */
     }
 
     section {
@@ -54,7 +54,7 @@
       margin: 20px;
       border: 2px solid #fff;
       border-radius: 15px;
-      background: #282c34; /* Cor de fundo escura */
+      background: #21262d; /* Cor de fundo escura, semelhante ao ChatGPT 3.5 */
       color: #fff;
       animation: fadeInLeft 3s ease-in-out;
       overflow: hidden;
@@ -86,7 +86,7 @@
     footer {
       text-align: center;
       padding: 20px;
-      background: #2c313a; /* Cor de fundo escura */
+      background: #282c34; /* Cor de fundo escura, semelhante ao ChatGPT 3.5 */
       animation: fadeInUp 3s ease-in-out;
       border-radius: 15px;
       margin-top: 20px;
@@ -97,7 +97,7 @@
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
-      background: #282c34; /* Cor de fundo escura */
+      background: #21262d; /* Cor de fundo escura, semelhante ao ChatGPT 3.5 */
       padding: 20px;
       border-radius: 15px;
       display: none;
@@ -114,6 +114,44 @@
       top: 10px;
       right: 10px;
       cursor: pointer;
+    }
+
+    .sidebar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 250px;
+      height: 100%;
+      background: #21262d; /* Cor de fundo escura, semelhante ao ChatGPT 3.5 */
+      padding: 20px;
+      display: none;
+      z-index: 1000;
+    }
+
+    .close-sidebar {
+      color: #fff;
+      cursor: pointer;
+      font-size: 20px;
+      margin-bottom: 20px;
+    }
+
+    .sidebar a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 18px;
+      margin-bottom: 10px;
+      display: block;
+      transition: color 0.5s ease;
+    }
+
+    .sidebar a:hover {
+      color: #61dafb; /* Cor de destaque semelhante ao ChatGPT 3.5 */
+    }
+
+    .github-link {
+      color: #61dafb; /* Cor de destaque semelhante ao ChatGPT 3.5 */
+      text-decoration: none;
+      font-size: 18px;
     }
 
     @keyframes fadeIn {
@@ -171,6 +209,7 @@
     <a href="#educacao">Educação</a>
     <a href="#projetos">Projetos</a>
     <a href="javascript:void(0);" onclick="openGitHubPopup()">Contato no GitHub</a>
+    <a href="javascript:void(0);" onclick="openFriendsMessage()">Melhores Amigos</a>
   </nav>
 
   <section id="sobre">
@@ -203,6 +242,12 @@
     <!-- Adicione mais conteúdo do formulário ou informações de contato aqui -->
   </div>
 
+  <div class="sidebar">
+    <span class="close-sidebar" onclick="closeSidebar()">X</span>
+    <a class="github-link" href="https://github.com/athyllarodrig21" target="_blank">Meu GitHub</a>
+    <a href="javascript:void(0);" onclick="openFriendsMessage()">Melhores Amigos</a>
+  </div>
+
   <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
   <script>
     function openGitHubPopup() {
@@ -211,6 +256,18 @@
 
     function closeGitHubPopup() {
       document.getElementById('githubPopup').style.display = 'none';
+    }
+
+    function openSidebar() {
+      document.querySelector('.sidebar').style.display = 'block';
+    }
+
+    function closeSidebar() {
+      document.querySelector('.sidebar').style.display = 'none';
+    }
+
+    function openFriendsMessage() {
+      alert('Feliz Natal, Rebeca, Isac e Giovanna! 🎄🎅');
     }
 
     $('nav a').on('click', function (e) {
