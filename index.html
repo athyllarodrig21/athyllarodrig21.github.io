@@ -153,5 +153,100 @@
     }
   </style>
 </head>
-<!-- ... (o resto do seu HTML permanece inalterado) -->
+<body>
+
+  <header>
+    <h1 class="animate__animated animate__fadeInDown">Athylla</h1>
+    <p class="animate__animated animate__fadeInUp">Desenvolvedor Web | Apaixonado por Tecnologia</p>
+  </header>
+
+  <nav>
+    <a href="#sobre">Sobre Mim</a>
+    <a href="#educacao">Educação</a>
+    <a href="#projetos">Projetos</a>
+    <a href="javascript:void(0);" onclick="openGitHubPopup()">Contato no GitHub</a>
+    <a href="javascript:void(0);" onclick="openFriendsMessage()">Melhores Amigos</a>
+  </nav>
+
+  <section id="sobre">
+    <h2 class="animate__animated animate__fadeInLeft">Sobre Mim</h2>
+    <p class="animate__animated animate__fadeInLeft">Sou um entusiasta da tecnologia apaixonado por desenvolvimento web.</p>
+  </section>
+
+  <section id="educacao">
+    <h2 class="animate__animated animate__fadeInLeft">Educação</h2>
+    <p class="animate__animated animate__fadeInLeft">Graduado em Ciência da Computação pela Universidade XYZ.</p>
+  </section>
+
+  <section id="projetos">
+    <h2 class="animate__animated animate__fadeInLeft">Projetos</h2>
+    <p class="animate__animated animate__fadeInLeft">Trabalhei em diversos projetos incríveis, desde websites até aplicativos móveis.</p>
+  </section>
+
+  <section id="contato">
+    <h2 class="animate__animated animate__fadeInLeft">Contato</h2>
+    <p class="animate__animated animate__fadeInLeft">Entre em contato comigo através do e-mail ou pelas redes sociais.</p>
+  </section>
+
+  <footer class="animate__animated animate__fadeInUp">
+    <p>&copy; 2023 Athylla - Todos os direitos reservados.</p>
+  </footer>
+
+  <div id="githubPopup" class="github-popup">
+    <span class="close-popup" onclick="closeGitHubPopup()">X</span>
+    <h2>Entre em Contato no GitHub</h2>
+    <!-- Adicione mais conteúdo do formulário ou informações de contato aqui -->
+  </div>
+
+  <div class="sidebar">
+    <span class="close-sidebar" onclick="closeSidebar()">X</span>
+    <a class="github-link" href="https://github.com/athyllarodrig21" target="_blank">Meu GitHub</a>
+    <a href="javascript:void(0);" onclick="openFriendsMessage()">Melhores Amigos</a>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+  <script>
+    function openGitHubPopup() {
+      document.getElementById('githubPopup').style.display = 'block';
+    }
+
+    function closeGitHubPopup() {
+      document.getElementById('githubPopup').style.display = 'none';
+    }
+
+    function openSidebar() {
+      document.querySelector('.sidebar').style.display = 'block';
+    }
+
+    function closeSidebar() {
+      document.querySelector('.sidebar').style.display = 'none';
+    }
+
+    function openFriendsMessage() {
+      alert('Feliz Natal, Rebeca, Isac e Giovanna! 🎄🎅');
+    }
+
+    $('nav a').on('click', function (e) {
+      e.preventDefault();
+      var targetSection = $($(this).attr('href'));
+      $('html, body').animate({
+        scrollTop: targetSection.offset().top
+      }, 1000);
+    });
+
+    $(window).scroll(function () {
+      var scroll = $(window).scrollTop();
+      if (scroll > 50) {
+        $('nav a').css('color', '#333');
+      } else {
+        $('nav a').css('color', '#fff');
+      }
+
+      // Mudança de cor de fundo ao rolar
+      var newBackgroundColor = scroll > 50 ? '#1c1f25' : '#161b22';
+      $('body').css('background', newBackgroundColor);
+    });
+  </script>
+
+</body>
 </html>
