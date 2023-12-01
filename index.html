@@ -10,17 +10,17 @@
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       margin: 0;
       padding: 0;
-      background: linear-gradient(to right, #f0ebeb, #d2d8d7); /* Gradiente de tons pastéis */
-      color: #333;
+      background: #1e1e1e; /* Cor de fundo escura */
+      color: #fff;
       animation: fadeIn 5s ease-in-out;
     }
 
     header {
-      background: #f6d6ad; /* Cor pastel */
+      background: #282c34; /* Cor de fundo escura */
       padding: 20px;
       text-align: center;
       animation: fadeInDown 3s ease-in-out;
-      border-radius: 15px; /* Bordas arredondadas */
+      border-radius: 15px;
     }
 
     header h1 {
@@ -34,14 +34,14 @@
     nav {
       display: flex;
       justify-content: space-around;
-      background: #ffebcd; /* Cor pastel */
+      background: #2c313a; /* Cor de fundo escura */
       padding: 10px;
       border-radius: 15px;
       margin-top: 10px;
     }
 
     nav a {
-      color: #333;
+      color: #fff;
       transition: color 0.5s ease;
     }
 
@@ -54,10 +54,10 @@
       margin: 20px;
       border: 2px solid #fff;
       border-radius: 15px;
-      background: #f6d6ad; /* Cor pastel */
-      color: #333;
+      background: #282c34; /* Cor de fundo escura */
+      color: #fff;
       animation: fadeInLeft 3s ease-in-out;
-      overflow: hidden; /* Evita que as formas geométricas ultrapassem os limites da seção */
+      overflow: hidden;
       position: relative;
     }
 
@@ -70,7 +70,7 @@
       height: 100%;
       background: url('sua-imagem-1.jpg') no-repeat center center fixed;
       background-size: cover;
-      opacity: 0.3; /* Ajuste a opacidade conforme necessário */
+      opacity: 0.3;
       z-index: -1;
     }
 
@@ -86,10 +86,34 @@
     footer {
       text-align: center;
       padding: 20px;
-      background: #ffebcd; /* Cor pastel */
+      background: #2c313a; /* Cor de fundo escura */
       animation: fadeInUp 3s ease-in-out;
       border-radius: 15px;
       margin-top: 20px;
+    }
+
+    .github-popup {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: #282c34; /* Cor de fundo escura */
+      padding: 20px;
+      border-radius: 15px;
+      display: none;
+      z-index: 999;
+    }
+
+    .github-popup h2 {
+      color: #fff;
+    }
+
+    .close-popup {
+      color: #fff;
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      cursor: pointer;
     }
 
     @keyframes fadeIn {
@@ -146,7 +170,7 @@
     <a href="#sobre">Sobre Mim</a>
     <a href="#educacao">Educação</a>
     <a href="#projetos">Projetos</a>
-    <a href="#contato">Contato</a>
+    <a href="javascript:void(0);" onclick="openGitHubPopup()">Contato no GitHub</a>
   </nav>
 
   <section id="sobre">
@@ -173,8 +197,22 @@
     <p>&copy; 2023 Athylla - Todos os direitos reservados.</p>
   </footer>
 
+  <div id="githubPopup" class="github-popup">
+    <span class="close-popup" onclick="closeGitHubPopup()">X</span>
+    <h2>Entre em Contato no GitHub</h2>
+    <!-- Adicione mais conteúdo do formulário ou informações de contato aqui -->
+  </div>
+
   <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
   <script>
+    function openGitHubPopup() {
+      document.getElementById('githubPopup').style.display = 'block';
+    }
+
+    function closeGitHubPopup() {
+      document.getElementById('githubPopup').style.display = 'none';
+    }
+
     $('nav a').on('click', function (e) {
       e.preventDefault();
       var targetSection = $($(this).attr('href'));
@@ -194,3 +232,4 @@
   </script>
 
 </body>
+</html>
