@@ -30,6 +30,7 @@
 
     header h1 {
       font-size: 2em;
+      margin-bottom: 5px;
     }
 
     header p {
@@ -45,15 +46,16 @@
       top: 0;
       left: 0;
       z-index: 1;
-      display: none;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
     }
 
     nav a {
-      display: block;
       color: #fff;
       text-decoration: none;
       padding: 10px;
-      margin: 5px 0;
+      margin: 5px 10px;
       transition: background 0.3s ease, color 0.3s ease;
     }
 
@@ -124,6 +126,14 @@
       margin-top: 20px;
     }
 
+    audio {
+      width: 100%;
+      margin-top: 20px;
+      background: #555;
+      padding: 10px;
+      border-radius: 10px;
+    }
+
     @keyframes fadeIn {
       from {
         opacity: 0;
@@ -170,18 +180,20 @@
 <body>
 
   <nav id="sidebar">
-    <a href="javascript:void(0);" class="close-sidebar" onclick="closeSidebar()">X</a>
+    <a href="javascript:void(0);" class="close-sidebar" onclick="closeSidebar()">X Fechar</a>
     <a href="#sobre">Sobre Mim</a>
     <a href="#educacao">Educação</a>
     <a href="#projetos">Projetos</a>
-    <a href="javascript:void(0);" onclick="openGitHubPopup()">Contato no GitHub</a>
-    <a href="javascript:void(0);" onclick="openFriendsMessage()">Melhores Amigos</a>
+    <a href="#contato">Contato</a>
+  </nav>
+
+  <nav>
+    <a href="javascript:void(0);" class="open-sidebar" onclick="openSidebar()">☰ Menu</a>
   </nav>
 
   <header>
     <h1 class="animate__animated animate__fadeInDown">Athylla</h1>
     <p class="animate__animated animate__fadeInUp">Desenvolvedor Web | Apaixonado por Tecnologia</p>
-    <a href="javascript:void(0);" class="open-sidebar" onclick="openSidebar()">☰ Menu</a>
   </header>
 
   <main>
@@ -210,20 +222,7 @@
     <p>&copy; 2023 Athylla - Todos os direitos reservados. 🎄⛄</p>
   </footer>
 
-  <div id="githubPopup" class="github-popup">
-    <span class="close-popup" onclick="closeGitHubPopup()">X</span>
-    <h2>Entre em Contato no GitHub</h2>
-    <!-- Adicione mais conteúdo do formulário ou informações de contato aqui -->
-  </div>
-
-  <div class="sidebar">
-    <span class="close-sidebar" onclick="closeSidebar()">X</span>
-    <a class="github-link" href="https://github.com/athyllarodrig21" target="_blank">Meu GitHub</a>
-    <a href="javascript:void(0);" onclick="openFriendsMessage()">Melhores Amigos</a>
-  </div>
-
-  <!-- Player de áudio para a música natalina -->
-  <audio id="background-music" loop volume="0.5">
+  <audio controls id="background-music">
     <source src="https://github.com/athyllarodrigues/athyllarodrigues.github.io/blob/main/Jingle%20Bells%20_%20Partitura%20com%20Notas%20Flauta%20Doce%2C%20Violino%20e%20Playback%20no%20Piano%20_%20Bate%20o%20Sino%20Pequenino_zHrCrA1kACc.mp3" type="audio/mp3">
     Seu navegador não suporta o elemento de áudio.
   </audio>
@@ -239,19 +238,8 @@
     function closeSidebar() {
       document.getElementById('sidebar').style.width = '0';
       document.getElementById('main').style.marginLeft = '0';
-      document.body.style.backgroundColor = 'white';
+      document.body.style.backgroundColor = '#141414'; /* Cor original de fundo */
     }
-  </script>
-
-  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-  <script>
-    // Adicione aqui seus scripts JavaScript existentes
-
-    // Iniciar a reprodução da música natalina ao carregar a página
-    document.addEventListener('DOMContentLoaded', function() {
-      var music = document.getElementById('background-music');
-      music.play();
-    });
   </script>
 
 </body>
