@@ -1,17 +1,18 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // GIF de abertura
+    
+    
     setTimeout(() => {
         document.getElementById('loading-screen').style.display = 'none';
         document.getElementById('content').style.display = 'block';
-    }, 5000); // 5000 ms = 5 segundos
+    }, 5000); 
 
-    // Menu Responsivo
+
     document.getElementById('menu-toggle').addEventListener('click', function() {
         const nav = document.querySelector('nav ul');
         nav.classList.toggle('show');
     });
 
-    // Scroll Suave
+    
     document.querySelectorAll('nav ul li a').forEach(anchor => {
         anchor.addEventListener('click', function(e) {
             e.preventDefault();
@@ -22,7 +23,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Detectar Scroll para mudar a cor do header
+    
     window.addEventListener('scroll', function() {
         const header = document.querySelector('header');
         if (window.scrollY > 50) {

@@ -1,4 +1,4 @@
-/* Estilos Gerais */
+
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto:wght@900&display=swap');
 
 :root {
@@ -21,7 +21,7 @@ body {
     background-color: var(--background-color);
     color: var(--text-color);
     overflow-x: hidden;
-    animation: pulseBackground 5s infinite alternate; /* Animação do pulsar das cores */
+    animation: pulseBackground 5s infinite alternate; 
 }
 
 @keyframes pulseBackground {
@@ -33,14 +33,14 @@ body {
     }
 }
 
-/* Loading Screen */
+
 #loading-screen {
     position: fixed;
     top: 0;
     left: 0;
-    width: 100vw; /* Utiliza a largura completa da viewport */
-    height: 100vh; /* Utiliza a altura completa da viewport */
-    background-color: var(--background-color); /* Cor de fundo do loading */
+    width: 100vw; 
+    height: 100vh; 
+    background-color: var(--background-color); 
     display: flex;
     justify-content: center;
     align-items: center;
@@ -52,7 +52,7 @@ body {
     max-height: 100%;
 }
 
-/* Conteúdo Principal */
+
 #content {
     display: none;
     width: 100%;
@@ -60,7 +60,7 @@ body {
     overflow-y: auto;
 }
 
-/* Header */
+
 header {
     background: var(--background-color);
     color: var(--text-color);
@@ -75,7 +75,7 @@ header {
 }
 
 header.scrolled {
-    background-color: rgba(18, 18, 18, 0.9); /* Fundo do cabeçalho ao rolar */
+    background-color: rgba(18, 18, 18, 0.9); 
 }
 
 nav ul {
@@ -101,7 +101,7 @@ nav ul li a:hover {
     color: var(--background-color);
 }
 
-/* Seções */
+
 section {
     padding: 100px 20px;
     text-align: center;
@@ -129,7 +129,7 @@ section {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.7); /* Camada preta com opacidade */
+    background-color: rgba(0, 0, 0, 0.7); 
     z-index: 1;
 }
 
@@ -142,15 +142,15 @@ section {
 }
 
 .profile-pic {
-    width: 250px; /* Ajuste o tamanho conforme necessário */
-    height: 250px; /* Ajuste o tamanho conforme necessário */
+    width: 250px; 
+    height: 250px; 
     margin-bottom: 20px;
     border-radius: 50%;
     overflow: hidden;
     border: 5px solid var(--primary-color);
     position: relative;
     z-index: 2;
-    animation: pulseBorder 3s infinite; /* Animação do contorno pulsante */
+    animation: pulseBorder 3s infinite; 
 }
 
 .profile-pic img {
@@ -168,15 +168,15 @@ section {
 }
 
 .profile-pic {
-    width: 250px; /* Ajuste o tamanho conforme necessário */
-    height: 250px; /* Ajuste o tamanho conforme necessário */
+    width: 250px; 
+    height: 250px; 
     margin-bottom: 20px;
     border-radius: 50%;
     overflow: hidden;
     border: 5px solid var(--primary-color);
     position: relative;
     z-index: 2;
-    animation: pulseBorder 3s infinite; /* Animação do contorno pulsante */
+    animation: pulseBorder 3s infinite; 
 }
 
 .profile-pic img {
@@ -187,11 +187,11 @@ section {
 
 .intro p {
     font-size: 1.5rem;
-    color: var(--text-color); /* Cor branca */
-    margin-top: 20px; /* Ajuste conforme necessário */
-    overflow: hidden; /* Esconder o conteúdo extra */
-    white-space: nowrap; /* Manter em uma linha */
-    animation: typeEffect 5s steps(40) 1s forwards; /* Animação de efeito de digitação */
+    color: var(--text-color); 
+    margin-top: 20px; 
+    overflow: hidden; 
+    white-space: nowrap; 
+    animation: typeEffect 5s steps(40) 1s forwards; 
 }
 
 @keyframes typeEffect {
@@ -203,7 +203,7 @@ section {
     }
 }
 
-/* Animação do contorno pulsante */
+
 @keyframes pulseBorder {
     0% {
         border-color: var(--primary-color);
@@ -219,60 +219,60 @@ section {
     }
 }
 
-/* Animação do contorno pulsante do gif de background */
+
 .hero {
-    animation: pulseBackground 5s infinite alternate; /* Animação do pulsar das cores */
+    animation: pulseBackground 5s infinite alternate; 
 }
 
 
 
-/* Link de Contato */
+
 .contact {
-    padding-bottom: 200px; /* Ajuste conforme necessário para o espaço do footer */
+    padding-bottom: 200px; 
 }
 
 .contact h2 {
-    margin-bottom: 40px; /* Espaçamento abaixo do título */
-    color: var(--text-color); /* Cor do texto */
+    margin-bottom: 40px; 
+    color: var(--text-color); 
 }
 
 .contact p {
     font-size: 1.5rem;
-    color: var(--text-color); /* Cor do texto */
+    color: var(--text-color); 
 }
 
 .contact ul {
     display: flex;
     justify-content: center;
-    margin-top: 20px; /* Espaçamento acima da lista */
+    margin-top: 20px;
 }
 
 .contact ul li {
-    margin: 0 10px; /* Espaçamento entre os ícones */
+    margin: 0 10px; 
 }
 
 .contact ul li a {
-    font-size: 2rem; /* Tamanho do ícone */
-    color: var(--text-color); /* Cor do ícone */
+    font-size: 2rem; 
+    color: var(--text-color); 
     transition: color 0.3s ease;
 }
 
 .contact ul li a:hover {
-    color: var(--primary-color); /* Cor do ícone ao passar o mouse */
+    color: var(--primary-color); 
 }
 
 /* Footer */
 footer {
-    background-color: var(--background-color); /* Cor de fundo do rodapé */
-    color: var(--text-color); /* Cor do texto do rodapé */
+    background-color: var(--background-color); 
+    color: var(--text-color); 
     text-align: center;
-    padding: 20px 0; /* Espaçamento interno do rodapé */
+    padding: 20px 0; 
     position: relative;
     bottom: 0;
     width: 100%;
 }
 
-/* Responsividade */
+
 @media (max-width: 768px) {
     nav ul {
         flex-direction: column;
