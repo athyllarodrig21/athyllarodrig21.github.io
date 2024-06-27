@@ -1,10 +1,11 @@
+/* Estilos Gerais */
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto:wght@900&display=swap');
 
 :root {
-    --primary-color: #1877f2; /* Azul do Facebook */
-    --secondary-color: #ffffff; /* Branco */
-    --background-color: #f0f2f5; /* Cinza Claro */
-    --text-color: #000000; /* Preto */
+    --primary-color: #00ff00; /* Verde Neon */
+    --secondary-color: #ff00ff; /* Roxo Neon */
+    --background-color: #000000; /* Preto */
+    --text-color: #ffffff; /* Branco */
     --accent-color: #ff0000; /* Vermelho */
 }
 
@@ -19,21 +20,62 @@ body {
     line-height: 1.6;
     background-color: var(--background-color);
     color: var(--text-color);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    overflow-x: hidden;
+    animation: pulseBackground 5s infinite alternate; /* Animação do pulsar das cores */
 }
 
+@keyframes pulseBackground {
+    0%, 100% {
+        filter: brightness(100%);
+    }
+    50% {
+        filter: brightness(90%);
+    }
+}
+
+/* Loading Screen */
+#loading-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw; /* Utiliza a largura completa da viewport */
+    height: 100vh; /* Utiliza a altura completa da viewport */
+    background-color: var(--background-color); /* Cor de fundo do loading */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+#loading-screen img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+/* Conteúdo Principal */
+#content {
+    display: none;
+    width: 100%;
+    height: 100vh;
+    overflow-y: auto;
+}
+
+/* Header */
 header {
     background: var(--background-color);
     color: var(--text-color);
     padding: 10px 0;
-    width: 100%;
     position: fixed;
+    width: 100%;
     top: 0;
     left: 0;
     z-index: 1000;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    border-bottom: 2px solid var(--primary-color);
+    transition: background-color 0.3s ease;
+}
+
+header.scrolled {
+    background-color: rgba(18, 18, 18, 0.9); /* Fundo do cabeçalho ao rolar */
 }
 
 nav ul {
@@ -56,62 +98,188 @@ nav ul li a {
 
 nav ul li a:hover {
     background: var(--primary-color);
-    color: var(--secondary-color);
+    color: var(--background-color);
 }
 
-main {
-    padding-top: 60px;
-    width: 100%;
-    max-width: 1200px;
+/* Seções */
+section {
+    padding: 100px 20px;
+    text-align: center;
 }
 
 .hero {
-    text-align: center;
-    padding: 100px 20px;
-    background: url('fotos/background.jpg') no-repeat center center/cover;
+    background: url('fotos/background.gif') no-repeat center center/cover;
+    position: relative;
     color: var(--text-color);
-}
-
-.hero h1 {
-    font-size: 2rem;
-    margin-bottom: 2rem;
-}
-
-.about, .projects, .contact {
-    padding: 60px 20px;
-    text-align: center;
-}
-
-.about h2, .projects h2, .contact h2 {
-    font-size: 2rem;
-    margin-bottom: 20px;
-}
-
-.projects .project {
-    margin-bottom: 20px;
-}
-
-.contact-icons {
+    border-bottom: 2px solid var(--primary-color);
+    height: 100vh;
     display: flex;
     justify-content: center;
-    gap: 20px;
-    font-size: 2rem;
-    margin-top: 20px;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
 }
 
-.contact-icons a {
-    color: var(--text-color);
-    transition: color 0.3s, transform 0.3s;
-}
 
-.contact-icons a:hover {
-    color: var(--primary-color);
-    transform: scale(1.1);
-}
 
-footer {
-    text-align: center;
-    padding: 20px;
-    background: var(--background-color);
+.hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* Camada preta com opacidade */
+    z-index: 1;
+}
+
+.profile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    z-index: 2;
+}
+
+.profile-pic {
+    width: 250px; /* Ajuste o tamanho conforme necessário */
+    height: 250px; /* Ajuste o tamanho conforme necessário */
+    margin-bottom: 20px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 5px solid var(--primary-color);
+    position: relative;
+    z-index: 2;
+    animation: pulseBorder 3s infinite; /* Animação do contorno pulsante */
+}
+
+.profile-pic img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.profile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    z-index: 2;
+}
+
+.profile-pic {
+    width: 250px; /* Ajuste o tamanho conforme necessário */
+    height: 250px; /* Ajuste o tamanho conforme necessário */
+    margin-bottom: 20px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 5px solid var(--primary-color);
+    position: relative;
+    z-index: 2;
+    animation: pulseBorder 3s infinite; /* Animação do contorno pulsante */
+}
+
+.profile-pic img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.intro p {
+    font-size: 1.5rem;
+    color: var(--text-color); /* Cor branca */
+    margin-top: 20px; /* Ajuste conforme necessário */
+    overflow: hidden; /* Esconder o conteúdo extra */
+    white-space: nowrap; /* Manter em uma linha */
+    animation: typeEffect 5s steps(40) 1s forwards; /* Animação de efeito de digitação */
+}
+
+@keyframes typeEffect {
+    0% {
+        width: 0;
+    }
+    100% {
+        width: 100%;
+    }
+}
+
+/* Animação do contorno pulsante */
+@keyframes pulseBorder {
+    0% {
+        border-color: var(--primary-color);
+        transform: scale(1);
+    }
+    50% {
+        border-color: var(--secondary-color);
+        transform: scale(1.05);
+    }
+    100% {
+        border-color: var(--primary-color);
+        transform: scale(1);
+    }
+}
+
+/* Animação do contorno pulsante do gif de background */
+.hero {
+    animation: pulseBackground 5s infinite alternate; /* Animação do pulsar das cores */
+}
+
+
+
+/* Link de Contato */
+.contact {
+    padding-bottom: 200px; /* Ajuste conforme necessário para o espaço do footer */
+}
+
+.contact h2 {
+    margin-bottom: 40px; /* Espaçamento abaixo do título */
+    color: var(--text-color); /* Cor do texto */
+}
+
+.contact p {
+    font-size: 1.5rem;
+    color: var(--text-color); /* Cor do texto */
+}
+
+.contact ul {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px; /* Espaçamento acima da lista */
+}
+
+.contact ul li {
+    margin: 0 10px; /* Espaçamento entre os ícones */
+}
+
+.contact ul li a {
+    font-size: 2rem; /* Tamanho do ícone */
+    color: var(--text-color); /* Cor do ícone */
+    transition: color 0.3s ease;
+}
+
+.contact ul li a:hover {
+    color: var(--primary-color); /* Cor do ícone ao passar o mouse */
+}
+
+/* Footer */
+footer {
+    background-color: var(--background-color); /* Cor de fundo do rodapé */
+    color: var(--text-color); /* Cor do texto do rodapé */
+    text-align: center;
+    padding: 20px 0; /* Espaçamento interno do rodapé */
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
 }

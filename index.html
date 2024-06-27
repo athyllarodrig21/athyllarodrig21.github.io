@@ -1,68 +1,73 @@
-<html lang="pt-BR">
+<!DOCTYPE html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Meu Portfólio - Athylla Rodrigues</title>
     <link rel="stylesheet" href="styles.css">
     <style>
         @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css');
-        @import url('https://fonts.googleapis.com/css2?family=Fira+Code&family=Roboto:wght@400;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto:wght@900&display=swap');
     </style>
 </head>
 <body>
-    <header>
-        <nav>
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">Sobre</a></li>
-                <li><a href="#projects">Projetos</a></li>
-                <li><a href="#contact">Contato</a></li>
-            </ul>
-            <div class="menu-toggle" id="menu-toggle">
-                <i class="fas fa-bars"></i>
-            </div>
-        </nav>
-    </header>
+    <div id="loading-screen">
+        <img src="fotos/loading.gif" alt="Loading">
+    </div>
 
-    <main>
-        <section id="home" class="hero">
-            <h1>Bem-vindo ao Meu Portfólio</h1>
-            <p>Olá! Sou Athylla, um apaixonado por design gráfico e programação.</p>
-        </section>
+    <div id="content" style="display: none;">
+        <header>
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">Sobre</a></li>
+                    <li><a href="#projects">Projetos</a></li>
+                    <li><a href="#contact">Contato</a></li>
+                </ul>
+            </nav>
+            <div class="menu-underline underline-pulse"></div> <!-- Linha pulsante -->
+        </header>
 
-        <section id="about" class="about">
-            <h2>Sobre Mim</h2>
-            <p>Atualmente, atuo como Designer Gráfico na Copy Jet, onde colaboro com a criação de soluções visuais impactantes. Além disso, estou ampliando meus conhecimentos em programação Full Stack na Infinity School, buscando combinar habilidades de design e desenvolvimento para criar projetos inovadores. Com 26 anos, estou sempre em busca de aprendizado e novos desafios.</p>
-        </section>
+        <main>
+            <<section id="home" class="hero">
+                <div class="profile">
+                    <div class="profile-pic">
+                        <img src="fotos/profile.jpg" alt="Athylla Rodrigues">
+                    </div>
+                    <h1>Athylla Rodrigues</h1>
+                    <div class="intro">
+                        <p>Olá! Sou Athylla, um apaixonado por design gráfico e programação.</p>
+                    </div>
+                </div>
+            </section>
+            
 
-        <section id="projects" class="projects">
-            <h2>Meus Projetos</h2>
-            <div class="project">
-                <h3>Projeto 1</h3>
-                <p>Descrição do Projeto 1.</p>
-            </div>
-            <div class="project">
-                <h3>Projeto 2</h3>
-                <p>Descrição do Projeto 2.</p>
-            </div>
-        </section>
+            <section id="about" class="about">
+                <h2>Sobre Mim</h2>
+                <p>Atualmente, atuo como Designer Gráfico na Copy Jet, onde colaboro com a criação de soluções visuais impactantes. Além disso, estou ampliando meus conhecimentos em programação Full Stack na Infinity School, buscando combinar habilidades de design e desenvolvimento para criar projetos inovadores. Com 26 anos, estou sempre em busca de aprendizado e novos desafios.</p>
+            </section>
 
-        <section id="contact" class="contact">
-            <h2>Entre em Contato</h2>
-            <div class="contact-icons">
-                <a href="https://api.whatsapp.com/send/?phone=5585994163298&text&type=phone_number&app_absent=0" target="_blank"><i class="fab fa-whatsapp"></i></a>
-                <a href="https://www.linkedin.com/in/athyllarodrigues/" target="_blank"><i class="fab fa-linkedin"></i></a>
-                <a href="https://instagram.com/athyllarodrig" target="_blank"><i class="fab fa-instagram"></i></a>
-                <a href="mailto:athyllarodrig@gmail.com"><i class="fas fa-envelope"></i></a>
-            </div>
-        </section>
-    </main>
+            <section id="projects" class="projects">
+                <h2>Meus Projetos</h2>
+                <div class="project">
+                    <h3>Projeto 1</h3>
+                    <p>Descrição do Projeto 1.</p>
+                </div>
+            </section>
 
-    <footer>
-        <p>&copy; 2024 Athylla Rodrigues. Todos os direitos reservados.</p>
-    </footer>
-    
+            <section id="contact" class="contact">
+                <h2>Contato</h2>
+                <p>Você pode me encontrar em:</p>
+                <ul>
+                    <li><a href="https://api.whatsapp.com/send/?phone=5585994163298&text&type=phone_number&app_absent=0" target="_blank"><i class="fab fa-whatsapp"></i></a></li>
+                    <li><a href="https://www.linkedin.com/in/athyllarodrigues/" target="_blank"><i class="fab fa-linkedin"></i></a></li>
+                    <li><a href="https://instagram.com/athyllarodrig" target="_blank"><i class="fab fa-instagram"></i></a></li>
+                    <li><a href="mailto:athyllarodrig@gmail.com" target="_blank"><i class="fas fa-envelope"></i></a></li>
+                </ul>
+            </section>
+        </main>
+    </div>
+
     <script src="scripts.js"></script>
 </body>
 </html>
