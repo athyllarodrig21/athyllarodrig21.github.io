@@ -1,246 +1,68 @@
-<!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Athylla - Meu Blog Natalino</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
-  <style>
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      margin: 0;
-      padding: 0;
-      background: #141414; /* Background escuro */
-      color: #fff;
-      transition: background 0.5s ease;
-      overflow-x: hidden;
-      animation: fadeIn 5s ease-in-out;
-      display: flex;
-      flex-direction: column;
-      height: 100vh;
-    }
-
-    header {
-      width: 100%;
-      background: #333; /* Cinza escuro */
-      padding: 20px;
-      text-align: center;
-      animation: fadeInDown 3s ease-in-out;
-    }
-
-    header h1 {
-      font-size: 2em;
-      margin-bottom: 5px;
-    }
-
-    header p {
-      animation: fadeInUp 3s ease-in-out;
-    }
-
-    nav {
-      width: 100%;
-      background: #555; /* Cinza mais claro */
-      padding: 10px;
-      border-radius: 0 0 15px 15px;
-      position: fixed;
-      top: 0;
-      left: 0;
-      z-index: 1;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    nav a {
-      color: #fff;
-      text-decoration: none;
-      padding: 10px;
-      margin: 5px 10px;
-      transition: background 0.3s ease, color 0.3s ease;
-    }
-
-    nav a:hover {
-      background: #444;
-      color: #eee;
-    }
-
-    main {
-      flex: 1;
-      padding: 20px;
-      transition: margin-left 0.5s;
-    }
-
-    section {
-      position: relative;
-      margin-bottom: 40px;
-      border: 2px solid #fff;
-      border-radius: 15px;
-      color: #fff;
-      animation: fadeInLeft 3s ease-in-out;
-      overflow: hidden;
-    }
-
-    section::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-size: cover;
-      opacity: 0.3;
-      z-index: -1;
-    }
-
-    #sobre::before {
-      background: url('https://images.unsplash.com/25/snow-light.JPG?q=80&w=1476&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D') no-repeat center center fixed;
-    }
-
-    #educacao::before {
-      background: url('https://images.unsplash.com/photo-1575108921207-e6fca0c7dcf5?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D') no-repeat center center fixed;
-    }
-
-    #projetos::before {
-      background: url('https://images.unsplash.com/photo-1474658303661-7a65351507ad?q=80&w=1469&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D') no-repeat center center fixed;
-    }
-
-    #contato::before {
-      background: url('https://images.unsplash.com/photo-1512225791657-89428d1df969?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D') no-repeat center center fixed;
-    }
-
-    section h2 {
-      font-size: 1.8em;
-      margin-bottom: 10px;
-    }
-
-    section p {
-      font-size: 1.2em;
-    }
-
-    footer {
-      text-align: center;
-      padding: 20px;
-      background: #333; /* Cinza escuro */
-      animation: fadeInUp 3s ease-in-out;
-      border-radius: 0 0 15px 15px;
-      margin-top: 20px;
-    }
-
-    audio {
-      width: 100%;
-      margin-top: 20px;
-      background: #555;
-      padding: 10px;
-      border-radius: 10px;
-    }
-
-    @keyframes fadeIn {
-      from {
-        opacity: 0;
-      }
-      to {
-        opacity: 1;
-      }
-    }
-
-    @keyframes fadeInDown {
-      from {
-        opacity: 0;
-        transform: translateY(-20px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    @keyframes fadeInUp {
-      from {
-        opacity: 0;
-        transform: translateY(20px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    @keyframes fadeInLeft {
-      from {
-        opacity: 0;
-        transform: translateX(-20px);
-      }
-      to {
-        opacity: 1;
-        transform: translateX(0);
-      }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Meu Portfólio - Athylla Rodrigues</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css');
+        @import url('https://fonts.googleapis.com/css2?family=Fira+Code&family=Roboto:wght@400;700&display=swap');
+    </style>
 </head>
 <body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">Sobre</a></li>
+                <li><a href="#projects">Projetos</a></li>
+                <li><a href="#contact">Contato</a></li>
+            </ul>
+            <div class="menu-toggle" id="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </nav>
+    </header>
 
-  <nav id="sidebar">
-    <a href="javascript:void(0);" class="close-sidebar" onclick="closeSidebar()">X Fechar</a>
-    <a href="#sobre">Sobre Mim</a>
-    <a href="#educacao">Educação</a>
-    <a href="#projetos">Projetos</a>
-    <a href="#contato">Contato</a>
-  </nav>
+    <main>
+        <section id="home" class="hero">
+            <h1>Bem-vindo ao Meu Portfólio</h1>
+            <p>Olá! Sou Athylla, um apaixonado por design gráfico e programação.</p>
+        </section>
 
-  <nav>
-    <a href="javascript:void(0);" class="open-sidebar" onclick="openSidebar()">☰ Menu</a>
-  </nav>
+        <section id="about" class="about">
+            <h2>Sobre Mim</h2>
+            <p>Atualmente, atuo como Designer Gráfico na Copy Jet, onde colaboro com a criação de soluções visuais impactantes. Além disso, estou ampliando meus conhecimentos em programação Full Stack na Infinity School, buscando combinar habilidades de design e desenvolvimento para criar projetos inovadores. Com 26 anos, estou sempre em busca de aprendizado e novos desafios.</p>
+        </section>
 
-  <header>
-    <h1 class="animate__animated animate__fadeInDown">Athylla</h1>
-    <p class="animate__animated animate__fadeInUp">Desenvolvedor Web | Apaixonado por Tecnologia</p>
-  </header>
+        <section id="projects" class="projects">
+            <h2>Meus Projetos</h2>
+            <div class="project">
+                <h3>Projeto 1</h3>
+                <p>Descrição do Projeto 1.</p>
+            </div>
+            <div class="project">
+                <h3>Projeto 2</h3>
+                <p>Descrição do Projeto 2.</p>
+            </div>
+        </section>
 
-  <main>
-    <section id="sobre">
-      <h2 class="animate__animated animate__fadeInLeft">Sobre Mim</h2>
-      <p class="animate__animated animate__fadeInLeft">Sou um entusiasta da tecnologia apaixonado por desenvolvimento web.</p>
-    </section>
+        <section id="contact" class="contact">
+            <h2>Entre em Contato</h2>
+            <div class="contact-icons">
+                <a href="https://api.whatsapp.com/send/?phone=5585994163298&text&type=phone_number&app_absent=0" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                <a href="https://www.linkedin.com/in/athyllarodrigues/" target="_blank"><i class="fab fa-linkedin"></i></a>
+                <a href="https://instagram.com/athyllarodrig" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="mailto:athyllarodrig@gmail.com"><i class="fas fa-envelope"></i></a>
+            </div>
+        </section>
+    </main>
 
-    <section id="educacao">
-      <h2 class="animate__animated animate__fadeInLeft">Educação</h2>
-      <p class="animate__animated animate__fadeInLeft">Graduado em Ciência da Computação pela Universidade XYZ.</p>
-    </section>
-
-    <section id="projetos">
-      <h2 class="animate__animated animate__fadeInLeft">Projetos</h2>
-      <p class="animate__animated animate__fadeInLeft">Trabalhei em diversos projetos incríveis, desde websites até aplicativos móveis.</p>
-    </section>
-
-    <section id="contato">
-      <h2 class="animate__animated animate__fadeInLeft">Contato</h2>
-      <p class="animate__animated animate__fadeInLeft">Entre em contato comigo através do e-mail ou pelas redes sociais.</p>
-    </section>
-  </main>
-
-  <footer class="animate__animated animate__fadeInUp">
-    <p>&copy; 2023 Athylla - Todos os direitos reservados. 🎄⛄</p>
-  </footer>
-
-  <audio controls id="background-music">
-    <source src="https://github.com/athyllarodrigues/athyllarodrigues.github.io/blob/main/Jingle%20Bells%20_%20Partitura%20com%20Notas%20Flauta%20Doce%2C%20Violino%20e%20Playback%20no%20Piano%20_%20Bate%20o%20Sino%20Pequenino_zHrCrA1kACc.mp3" type="audio/mp3">
-    Seu navegador não suporta o elemento de áudio.
-  </audio>
-
-  <script>
-    function openSidebar() {
-      document.getElementById('sidebar').style.width = '250px';
-      document.getElementById('main').style.marginLeft = '250px';
-      document.body.style.backgroundColor = 'rgba(0,0,0,0.4)';
-      document.getElementById('sidebar').style.display = 'block';
-    }
-
-    function closeSidebar() {
-      document.getElementById('sidebar').style.width = '0';
-      document.getElementById('main').style.marginLeft = '0';
-      document.body.style.backgroundColor = '#141414'; /* Cor original de fundo */
-    }
-  </script>
-
+    <footer>
+        <p>&copy; 2024 Athylla Rodrigues. Todos os direitos reservados.</p>
+    </footer>
+    
+    <script src="scripts.js"></script>
 </body>
 </html>
